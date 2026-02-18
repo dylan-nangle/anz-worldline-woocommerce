@@ -1,0 +1,27 @@
+# IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Local development
+.env
+.env.local
+
+# Node (if using build tools)
+node_modules/
+
+# Composer dev dependencies (vendor is committed for distribution)
+# vendor/
+
+# WordPress
+wp-config.php
+wp-content/uploads/
+wp-content/upgrade/
