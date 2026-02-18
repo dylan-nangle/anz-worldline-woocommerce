@@ -1,6 +1,10 @@
 # ANZ Worldline Payment Gateway for WooCommerce
 
-A secure WooCommerce payment gateway plugin for ANZ Worldline Payment Solutions. Customers are redirected to a secure hosted checkout page to complete their payment.
+[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/gpl-2.0)
+[![WooCommerce](https://img.shields.io/badge/WooCommerce-5.0%2B-purple.svg)](https://woocommerce.com/)
+[![PHP](https://img.shields.io/badge/PHP-7.4%2B-777BB4.svg)](https://php.net/)
+
+A free, open-source WooCommerce payment gateway for ANZ Worldline Payment Solutions. Customers are redirected to a secure hosted checkout page to complete their payment.
 
 ## Features
 
@@ -8,6 +12,8 @@ A secure WooCommerce payment gateway plugin for ANZ Worldline Payment Solutions.
 - **Multiple Card Support** - Visa, Mastercard, and more
 - **3D Secure 2.0** - Built-in support for frictionless and challenge flows
 - **Authorize & Capture** - Choose between immediate capture or authorize-only
+- **Manual Capture** - Capture authorized payments from the order admin page
+- **Refunds** - Process full or partial refunds directly from WooCommerce
 - **Fraud Prevention** - Configurable payment retry limits
 - **Dual Environment** - Separate credentials for test and live modes
 - **Transaction Logging** - Built-in admin log viewer
@@ -23,25 +29,20 @@ A secure WooCommerce payment gateway plugin for ANZ Worldline Payment Solutions.
 
 ## Installation
 
-### Via Composer (Recommended)
+### Option 1: Download from GitHub
 
-1. Upload the plugin folder to `/wp-content/plugins/`
-2. Navigate to the plugin directory:
-   ```bash
-   cd wp-content/plugins/anz-worldline-gateway
-   ```
-3. Install dependencies:
-   ```bash
-   composer install
-   ```
-4. Activate the plugin in WordPress admin
+1. Download the latest release ZIP from the [Releases page](../../releases)
+2. In WordPress admin: **Plugins → Add New → Upload Plugin**
+3. Choose the ZIP file and click **Install Now**
+4. Click **Activate**
 
-### Manual Installation
+### Option 2: Manual Upload
 
-1. Download the plugin
-2. Upload to `/wp-content/plugins/anz-worldline-gateway/`
-3. Run `composer install` in the plugin directory
-4. Activate via **Plugins** menu in WordPress
+1. Download or clone this repository
+2. Upload the folder to `/wp-content/plugins/anz-worldline-gateway/`
+3. Activate via **Plugins → Installed Plugins** in WordPress admin
+
+> **Note:** All dependencies are included. No need to run Composer.
 
 ## Configuration
 
@@ -278,14 +279,6 @@ add_filter('woocommerce_gateway_icon', function($icon, $gateway_id) {
 2. Verify all required credentials are entered
 3. Check that you're using the correct credentials for the current mode
 
-### "Composer dependencies missing" Notice
-
-**Solution:**
-```bash
-cd wp-content/plugins/anz-worldline-gateway
-composer install
-```
-
 ### RETURNMAC Verification Failed
 
 **Cause:** Callback URL mismatch or session issue.
@@ -312,18 +305,20 @@ This plugin uses the official Worldline Online Payments PHP SDK:
 
 ## Changelog
 
-### 1.0.0 (2024)
+### 1.0.0
 
 **Initial Release**
-- Hosted checkout integration
-- Authorize & Capture / Authorize Only modes
-- Payment retry limits
+- Hosted checkout integration with ANZ Worldline
+- Authorize & Capture / Authorize Only payment modes
+- Manual capture for authorized payments via admin
+- Full and partial refund support from WooCommerce
+- Payment retry limits (fraud prevention)
 - Separate test/live credentials
 - Transaction logging with admin viewer
-- 3D Secure 2.0 support
-- HPOS compatibility
-- Custom checkout styling
-- Security: RETURNMAC verification
+- 3D Secure 2.0 support (frictionless and challenge flows)
+- HPOS compatibility (High-Performance Order Storage)
+- WooCommerce Blocks checkout styling
+- Security: RETURNMAC callback verification
 - Security: Input sanitization & output escaping
 - Visa & Mastercard logo display
 
@@ -341,11 +336,20 @@ For ANZ Worldline account issues, contact ANZ Worldline support.
 
 For plugin issues, check the transaction logs and WooCommerce logs for debugging information.
 
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
 ## License
 
-GPL-2.0-or-later
+This project is licensed under the GPL-2.0-or-later License - see the [LICENSE](LICENSE) file for details.
 
 ## Credits
 
-- ANZ Worldline Payment Solutions
-- Worldline Online Payments PHP SDK
+- [Worldline Online Payments PHP SDK](https://github.com/Online-Payments/sdk-php)
