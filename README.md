@@ -29,18 +29,27 @@ A free, open-source WooCommerce payment gateway for ANZ Worldline Payment Soluti
 
 ## Installation
 
-### Option 1: Download from GitHub
+### Option 1: Download from GitHub Releases (Recommended)
 
 1. Download the latest release ZIP from the [Releases page](../../releases)
 2. In WordPress admin: **Plugins → Add New → Upload Plugin**
 3. Choose the ZIP file and click **Install Now**
 4. Click **Activate**
 
-### Option 2: Manual Upload
+### Option 2: Download ZIP from Code Button
 
-1. Download or clone this repository
-2. Upload the folder to `/wp-content/plugins/anz-worldline-gateway/`
-3. Activate via **Plugins → Installed Plugins** in WordPress admin
+1. Click the green **Code** button → **Download ZIP**
+2. Extract the ZIP file
+3. **Important:** Rename the extracted folder from `anz-worldline-woocommerce-main` to `anz-worldline-gateway`
+4. Upload the renamed folder to `/wp-content/plugins/`
+5. Activate via **Plugins → Installed Plugins** in WordPress admin
+
+### Option 3: Git Clone
+
+```bash
+cd /path/to/wordpress/wp-content/plugins
+git clone https://github.com/aussiewebpress/anz-worldline-woocommerce.git anz-worldline-gateway
+```
 
 > **Note:** All dependencies are included. No need to run Composer.
 
