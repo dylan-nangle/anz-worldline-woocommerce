@@ -4,8 +4,8 @@
  * Plugin URI: https://www.anzworldline-solutions.com.au/
  * Description: Accept payments via ANZ Worldline Payment Solutions Hosted Checkout
  * Version: 1.0.0
- * Author: Your Company
- * Author URI: https://yourcompany.com
+ * Author: Dylan Nangle
+ * Author URI: https://aussiewebpress.online
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: anz-worldline-gateway
