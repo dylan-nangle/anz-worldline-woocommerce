@@ -1,0 +1,15 @@
+{
+    "name": "anz/worldline-woocommerce-gateway",
+    "description": "WooCommerce payment gateway for ANZ Worldline Payment Solutions",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": ">=7.4",
+        "online-payments/sdk-php": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ANZ\\Worldline\\WooCommerce\\": "includes/"
+        }
+    }
+}

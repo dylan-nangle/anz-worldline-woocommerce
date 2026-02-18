@@ -1,0 +1,112 @@
+{
+    "packages": [
+        {
+            "name": "online-payments/sdk-php",
+            "version": "5.18.0",
+            "version_normalized": "5.18.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Online-Payments/sdk-php.git",
+                "reference": "b5d259a3eb0e1a4b15aac3105b324af0b10d5ee0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Online-Payments/sdk-php/zipball/b5d259a3eb0e1a4b15aac3105b324af0b10d5ee0",
+                "reference": "b5d259a3eb0e1a4b15aac3105b324af0b10d5ee0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "robtimus/multipart": "^1.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.9",
+                "phpunit/phpunit": "^9.0"
+            },
+            "time": "2025-02-06T15:12:24+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "OnlinePayments\\Sdk\\": [
+                        "src/OnlinePayments/Sdk",
+                        "lib/OnlinePayments/Sdk"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "OnlinePayments"
+                }
+            ],
+            "description": "PHP SDK to communicate with the payment platform server-to-server API",
+            "keywords": [
+                "sdk"
+            ],
+            "support": {
+                "issues": "https://github.com/Online-Payments/sdk-php/issues",
+                "source": "https://github.com/Online-Payments/sdk-php/tree/5.18.0"
+            },
+            "install-path": "../online-payments/sdk-php"
+        },
+        {
+            "name": "robtimus/multipart",
+            "version": "1.0.1",
+            "version_normalized": "1.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/robtimus/php-multipart.git",
+                "reference": "98977024f1261185d139c9df0aaecbf28cb131f4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/robtimus/php-multipart/zipball/98977024f1261185d139c9df0aaecbf28cb131f4",
+                "reference": "98977024f1261185d139c9df0aaecbf28cb131f4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4"
+            },
+            "time": "2023-01-16T18:51:47+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Robtimus\\Multipart\\": [
+                        "src/Robtimus/Multipart"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Spoor",
+                    "email": "robtimus@users.noreply.github.com"
+                }
+            ],
+            "description": "A library to support (streaming) multiparts",
+            "homepage": "https://github.com/robtimus/php-multipart",
+            "keywords": [
+                "multipart",
+                "streaming"
+            ],
+            "support": {
+                "issues": "https://github.com/robtimus/php-multipart/issues",
+                "source": "https://github.com/robtimus/php-multipart/tree/1.0.1"
+            },
+            "install-path": "../robtimus/multipart"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}

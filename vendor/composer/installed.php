@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => 'anz/worldline-woocommerce-gateway',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => null,
+        'type' => 'wordpress-plugin',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => false,
+    ),
+    'versions' => array(
+        'anz/worldline-woocommerce-gateway' => array(
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => null,
+            'type' => 'wordpress-plugin',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'online-payments/sdk-php' => array(
+            'pretty_version' => '5.18.0',
+            'version' => '5.18.0.0',
+            'reference' => 'b5d259a3eb0e1a4b15aac3105b324af0b10d5ee0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../online-payments/sdk-php',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'robtimus/multipart' => array(
+            'pretty_version' => '1.0.1',
+            'version' => '1.0.1.0',
+            'reference' => '98977024f1261185d139c9df0aaecbf28cb131f4',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../robtimus/multipart',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);
