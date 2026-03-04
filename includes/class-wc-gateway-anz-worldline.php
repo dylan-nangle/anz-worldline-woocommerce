@@ -541,6 +541,16 @@ class WC_Gateway_ANZ_Worldline extends WC_Payment_Gateway {
             exit;
         }
 
+        // Prevent duplicate callback processing with a transient lock
+        $lock_key = 'anz_worldline_processing_' . $order_id;
+        if (get_transient($lock_key)) {
+            $this->log('Callback already being processed, redirecting to thank you page', 'info', array('order_id' => $order_id));
+            wp_redirect($this->get_return_url($order));
+            exit;
+        }
+        // Set lock for 60 seconds to prevent race conditions
+        set_transient($lock_key, true, 60);
+
         // Get the hosted checkout ID
         $hosted_checkout_id = $order->get_meta('_anz_worldline_hosted_checkout_id');
 
@@ -653,6 +663,9 @@ class WC_Gateway_ANZ_Worldline extends WC_Payment_Gateway {
                                 ));
                             }
 
+                            // Clear the processing lock
+                            delete_transient($lock_key);
+
                             // Redirect to thank you page
                             wp_redirect($this->get_return_url($order));
                             exit;
@@ -675,6 +688,9 @@ class WC_Gateway_ANZ_Worldline extends WC_Payment_Gateway {
                             $statusCode,
                             $failure_info['reason']
                         ));
+
+                        // Clear the processing lock to allow retry
+                        delete_transient($lock_key);
 
                         wc_add_notice($failure_info['customer_message'], 'error');
                         wp_redirect(wc_get_checkout_url());
@@ -701,6 +717,9 @@ class WC_Gateway_ANZ_Worldline extends WC_Payment_Gateway {
                 $status
             ));
 
+            // Clear the processing lock to allow retry
+            delete_transient($lock_key);
+
             wc_add_notice($failure_reason, 'error');
             wp_redirect(wc_get_checkout_url());
             exit;
@@ -712,6 +731,10 @@ class WC_Gateway_ANZ_Worldline extends WC_Payment_Gateway {
                 'exception_code' => $e->getCode(),
             ));
             $order->add_order_note(__('Payment verification failed: ', 'anz-worldline-gateway') . $e->getMessage());
+
+            // Clear the processing lock to allow retry
+            delete_transient($lock_key);
+
             wc_add_notice(__('Payment verification failed. Please contact support.', 'anz-worldline-gateway'), 'error');
             wp_redirect(wc_get_checkout_url());
             exit;
